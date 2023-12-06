@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+#hub {
+    color: #2acc80;
+    font-weight: bold;
+}
+
+.form-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.form-holder .form-content {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-content .form-items {
+    border: 3px solid #2acc80;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 540px;
+    border-radius: 10px;
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+#nameinput, #farmlocationinput {
+    border: solid 2px #2acc80;
+}
+
+.form-content h3 {
+    color: black;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-content h3.form-title {
+    margin-bottom: 30px;
+}
+
+.form-content p {
+    color: black;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+.form-content label,
+.was-validated .form-check-input:invalid~.form-check-label,
+.was-validated .form-check-input:valid~.form-check-label {
+    color: black;
+}
+
+.form-content input[type=text],
+.form-content select {
+    width: 100%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    color: black;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
+
+.btn-primary {
+    background-color: #2acc80;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #30b878;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+.form-content textarea:hover,
+.form-content textarea:focus {
+    border: 0;
+    background-color: #ebeff8;
+    color: #8D8D8D;
+}
+
+.mv-up {
+    margin-top: -9px !important;
+    margin-bottom: 8px !important;
+}
+
+.invalid-feedback {
+    color: #ff606e;
+}
+
+.valid-feedback {
+    color: #2acc80;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+    .form-content .form-items {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .form-content .form-items {
+        min-width: auto;
+    }
+}

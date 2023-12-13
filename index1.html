@@ -16,35 +16,42 @@
         <div class="text-center mt-4 name">
             HarvestHub
         </div>
-        <form class="p-3 mt-3">
+        <form class="p-3 mt-3" onsubmit="loginUser(event)">
             <div class="form-field d-flex align-items-center">
                 <input type="text" name="userName" id="userName" placeholder="Enter DID">
             </div>
-            <button class="btn mt-2">Log in</button>
+            <button type="submit" class="btn mt-2">Log in</button>
         </form>
         <div class="text-center fs-6">
             <div>Don't have an account?</div>
             <a href="index3.html"><h6>Sign up</h6></a>
         </div>
     </div>
-    <script href="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
-        function registerUser() {
+        function loginUser(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
             // Get user input
-            var username = $('#username').val();
-            var password = $('#password').val();
-            // AJAX request
+            var username = $('#userName').val();
+
+            // Make AJAX request to the API endpoint
             $.ajax({
-                url: 'your_registration_endpoint', // Replace with your actual registration endpoint
+                url: 'https://shark-app-typoh.ondigitalocean.app/authenticate', // Replace with your actual API endpoint
                 type: 'POST',
                 contentType: 'application/json',
-                data: JSON.stringify({ username: username, password: password }),
+                data: JSON.stringify({ username: username }),
                 success: function(response) {
-                    $('#responseMessage').text('Registration successful: ' + response.message);
+                    // Handle the API response
+                    console.log('Login successful:', response);
+                    // Redirect or perform other actions based on the response
                 },
                 error: function(xhr, status, error) {
-                    $('#responseMessage').text('Registration failed: ' + error);
+                    // Handle errors
+                    console.error('Login failed: ' + error);
                 }
             });
         }

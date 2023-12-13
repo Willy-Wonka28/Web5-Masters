@@ -8,7 +8,7 @@ function generateDid() {
             console.log('I am here')
             console.log(response)
             console.log('DID generated successfully:', response);
-            $('#generatedDID').val(response.did);
+            $('#generatedDID').val(response.data.newUserDid);
         },
         error: function(xhr, status, error) {
             console.error('Failed to generate DID: ' + error);
@@ -23,9 +23,18 @@ function copyToClipboard(elementId) {
     document.execCommand("copy");
 }
 
+
 function registerUser() {
     // Get user input
-    var username = $('#userName').val();
-    // Add additional code to handle registration
-    // ...
+    var generatedDID = $('#generatedDID').val();
+    var userDID = $('#userDID').val();
+
+    // Check if generatedDID matches userDID
+    if (generatedDID === userDID) {
+        // Redirect to a new webpage
+        window.location.href = 'feed.html';
+    } else {
+        // Handle the case where DID doesn't match
+        alert('DID does not match. Please check your DID.');
+    }
 }

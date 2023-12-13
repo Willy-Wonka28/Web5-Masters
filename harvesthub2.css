@@ -4,19 +4,21 @@
     box-sizing: border-box;
 }
 
-*, body {
+body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
+    display: none;
 }
 
 html, body {
     height: 100%;
-    background-color: white;
     overflow: hidden;
 }
+
+
 
 #hub {
     color: #2acc80;
@@ -52,7 +54,7 @@ html, body {
     transition: all 0.4s ease;
 }
 
-#nameinput, #farmlocationinput {
+#nameinput, #farmlocationinput, #soilinput {
     border: solid 2px #2acc80;
 }
 
@@ -148,3 +150,4 @@ html, body {
         min-width: auto;
     }
 }
+

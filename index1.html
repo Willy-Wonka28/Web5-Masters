@@ -18,24 +18,36 @@
         </div>
         <form class="p-3 mt-3">
             <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="userName" id="userName" placeholder="Passkey">
+                <input type="text" name="userName" id="userName" placeholder="Enter DID">
             </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
-            </div>
-            <button class="btn mt-3">Login</button>
+            <button class="btn mt-2">Log in</button>
         </form>
         <div class="text-center fs-6">
             <div>Don't have an account?</div>
             <a href="index3.html"><h6>Sign up</h6></a>
         </div>
     </div>
-    <div class="text-center fs-3">
-        <h6 id="banner">Currently our refined Smart System and E-commerce Marketplace is in development. Greater things are underway for all our users!</h6>
-    </div>
-
     <script href="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        function registerUser() {
+            // Get user input
+            var username = $('#username').val();
+            var password = $('#password').val();
+            // AJAX request
+            $.ajax({
+                url: 'your_registration_endpoint', // Replace with your actual registration endpoint
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ username: username, password: password }),
+                success: function(response) {
+                    $('#responseMessage').text('Registration successful: ' + response.message);
+                },
+                error: function(xhr, status, error) {
+                    $('#responseMessage').text('Registration failed: ' + error);
+                }
+            });
+        }
+    </script>
 </body>
 </html>

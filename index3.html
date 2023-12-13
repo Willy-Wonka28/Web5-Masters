@@ -17,26 +17,24 @@
             HarvestHub
         </div>
         <form class="p-3 mt-3">
+            <button type="button" class="btn mb-4" onclick="generateDid()">Generate DID</button>
             <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="userName" id="userName" placeholder="Passkey">
+                <input type="text" name="generatedDID" id="generatedDID" placeholder="Generated DID">
+                <button type="button" class="btn w-50" onclick="copyToClipboard('generatedDID')">Copy</button>
             </div>
             <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+                <input type="text" name="userName" id="userName" placeholder="Enter DID">
             </div>
-            <button class="btn mt-3">Sign up</button>
+            <button type="button" class="btn mt-2" onclick="registerUser()">Sign up</button>
         </form>
         <div class="text-center fs-6">
             <div>Already have an account?</div>
             <a href="index1.html"><h6>Login</h6></a>
         </div>
     </div>
-
-    <div class="text-center fs-3">
-        <h6 id="banner">Currently our refined Smart System and E-commerce Marketplace is in development. Greater things are underway for all our users!</h6>
-    </div>
-
-    <script href="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="index3.js">
+    </script>
 </body>
 </html>

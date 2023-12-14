@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => {
             console.error('Error fetching news:', error);
-            newsContainer.innerHTML = 'Error fetching news.';
+            newsContainer.innerHTML = '<div class="d-flex flex-column align-items-center justify-content-center">Error fetching news. Check your internet connection.</div>';
         });
 
     // Function to display news articles

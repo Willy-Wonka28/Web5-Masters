@@ -64,8 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Helper function to truncate a string to a specified number of words
-    function truncateWords(text, limit) {
-        const words = text.split(' ');
-        return words.slice(0, limit).join(' ') + (words.length > limit ? '...' : '');
+ // Helper function to truncate a string to a specified number of words
+function truncateWords(text, limit) {
+    if (!text) {
+        return ''; // Return an empty string if text is null or undefined
     }
+
+    const words = text.split(' ');
+    return words.slice(0, limit).join(' ') + (words.length > limit ? '...' : '');
+}
+
 });
